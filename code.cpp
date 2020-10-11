@@ -43,7 +43,7 @@ struct fraction{
 	fraction operator/(fraction t){ return (*this) * fraction(t.b, t.a); }
 	bool operator==(fraction t){ return (a == t.a && b == t.b && neg == t.neg); }
 	bool operator!=(fraction t){ return !((*this) == t); }
-	bool operator>=(fraction t){ return ((*this) - t).neg; }
+	bool operator>=(fraction t){ return !((*this) - t).neg; }
 	bool operator>(fraction t){ return (((*this) != t) && ((*this) >= t)); }
 	bool operator<=(fraction t){ return !((*this) > t); }
 	bool operator<(fraction t){ return !((*this) >= t); }
