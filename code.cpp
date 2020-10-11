@@ -30,7 +30,10 @@ struct fraction{
 	fraction operator+(fraction t){
 		ll c = mylcm(b, t.b);
 		if(!neg && !t.neg) return fraction(a * (c / b) + t.a * (c / t.b), c);
-		else if(!neg && t.neg) return fraction(a * (c / b) - t.a * (c / t.b), c);
+		else if(!neg && t.neg) {
+			//if(a * (c / b) < t.a * (c / t.b)) return -((-t) + (-(*this)));	//to make the numerator argument always nonnegative, uncomment this line
+			return fraction(a * (c / b) - t.a * (c / t.b), c);
+		}
 		else if(neg && !t.neg) return t + (*this);
 		else return fraction(a * (c / b) + t.a * (c / t.b), c, true);
 	}
