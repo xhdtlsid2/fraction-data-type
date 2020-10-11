@@ -48,5 +48,5 @@ struct fraction{
 	bool operator<=(fraction t){ return !((*this) > t); }
 	bool operator<(fraction t){ return !((*this) >= t); }
 	
-	fraction absVal(){ return fraction(a, b, true); }
+	fraction absVal(){ return fraction(a, b, false); }
 };
